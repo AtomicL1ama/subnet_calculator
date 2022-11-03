@@ -9,6 +9,7 @@ It then displays the LANs in descending order of host amounts, giving the networ
 An example of use:
 
 
-                      ![image](https://user-images.githubusercontent.com/67984700/199847950-a5457241-d398-4087-82f5-4660f6610f1e.png)
+                      ![image](https://user-images.githubusercontent.com/67984700/199848430-9234a078-e8ba-4ddd-bfd9-ac4a232c3ad0.png)
+
 
 
