@@ -7,9 +7,4 @@ subnet_calculator.py takes input from the console for first address as integer (
 It then displays the LANs in descending order of host amounts, giving the network, gateway, and broadcast address for that LAN. Current, string output is hardcoded with IP address values consistent with pre-lab requirements.
 
 An example of use:
-
-
-                      ![image](https://user-images.githubusercontent.com/67984700/199848430-9234a078-e8ba-4ddd-bfd9-ac4a232c3ad0.png)
-
-
-
+![image](https://user-images.githubusercontent.com/67984700/199848842-34e38b0c-4441-48c9-8fc4-bf2b4d455f70.png)
