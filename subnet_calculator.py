@@ -12,7 +12,7 @@ def getBitSize(n):
 def allocateAddresses(firstAddressSpace, hostRequestList):
     hostRequestList.sort(reverse = True)
     numSubnets = len(hostRequestList)
-    printInitialize(firstAddressSpace, numSubnets)
+    print("\nNumber of subnets = " + str(numSubnets))
     nextAddressSpace = firstAddressSpace
     for x in range(numSubnets):
         print("\nLAN " + str(x) + ":")
@@ -20,11 +20,7 @@ def allocateAddresses(firstAddressSpace, hostRequestList):
         bitSize = getBitSize(numHosts)
         subnetRange = int(math.pow(2,bitSize))
         nextAddressSpace += subnetRange
-        printSubnet(numHosts, bitSize, subnetRange, nextAddressSpace)
-    
-def printInitialize(firstAddressSpace, numSubnets):
-    print("firstAddressSpace= " + str(firstAddressSpace))
-    print("numSubnets = " + str(numSubnets))
+        printSubnet(numHosts, bitSize, subnetRange, nextAddressSpace)    
     
 def printSubnet(numHosts, bitSize, subnetRange, nextAddressSpace):
     network = nextAddressSpace - subnetRange
@@ -32,13 +28,16 @@ def printSubnet(numHosts, bitSize, subnetRange, nextAddressSpace):
     broadcast = nextAddressSpace -1 
     msg = "   Hosts =  " + str(numHosts)
     msg += "\n   bitSize =  " + str(bitSize)
+    msg += "\n   Subnet Mask       =\t255.255.255." + str(256-subnetRange)
     msg += "\n   Network Address   =\t10.10.172." + str(network) 
     msg += "\n   Gateway Address   =\t10.10.172." + str(gateway) 
     msg += "\n   Broadcast Address =  10.10.172." + str(broadcast)
+    msg += "\n   Host Range:       =\t10.10.172." + str(gateway+1) + " - 10.10.172." + str(broadcast-1)
     print(msg)
     
 def initialize():
-    firstAddressSpace = input("Enter first address space as integer: ")
+    print("\n################ [subnet_calculator.py] ################\n")
+    firstAddressSpace = input("Enter first address space integer (i.e. 10.10.172.X): ")
     addMore = True
     hostRequestList = []
     hostRequestList.append(int(input("Enter requested host size: ")))
@@ -47,10 +46,13 @@ def initialize():
         hostRequestList.append(int(input("Enter another requested host size: ")))
         addMore = input("Add additional LAN? (y/n): ")
     allocateAddresses(int(firstAddressSpace),hostRequestList)
+    print("\n################\n")
     
 ###############################
 
 initialize()
+
+###############################
 
         
     
