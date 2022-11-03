@@ -8,13 +8,20 @@ It then displays the LANs in descending order of host amounts.
 
 [UPDATE]
 Calculator still carries hardcoded "10.10.172" string related to the lab exercise, but now prints the following: 
-> Number of hosts requested\n
-  The number of bits needed\n
-  Subnet Mask\n
-  Network Address\n
-  Gateway Address\n
-  Broadcast Address\n
-  Host Range\n
+
+> Number of hosts requested
+  
+> The number of bits needed
+  
+> Subnet Mask
+  
+> Network Address
+  
+> Gateway Address
+  
+> Broadcast Address
+  
+> Host Range
     
 Below is an example of subnet_calculator in use:
 
